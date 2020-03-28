@@ -24,7 +24,7 @@ git merge master -X theirs
 echo ***** master merged
 sed -i -- 's/node_modules\/reveal\.js/https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/reveal.js\/3.6.0/g' index.html
 echo ***** activate controls
-sed -i -- 's/\/#\//\/web-engineering\/#\//' index.html
+sed -i -- 's/\/#\//\/SS2020-web-mobile2\/#\//' index.html
 echo ***** adjusted relative links
 sed -i -- 's/controls: false/controls: true/g' index.html
 echo ***** replaced node_modules by cdn
