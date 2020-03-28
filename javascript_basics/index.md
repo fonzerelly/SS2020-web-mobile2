@@ -1,6 +1,4 @@
 # JavaScript Basics
-??HORIZONTAL
-<img src="javascript_basics/images/birth_of_js.png" width="65%">
 
 ??NOTE
 * As we already mentioned there was a lot of movement in this upcoming internet technology. The browser wars were raging, because http was the first internet technology, that had the potential to be used by the normal user. Netscape has always been the underdog, but it had been working on the internet technology area long before Microsoft realized, how important the internet would be. It took Microsoft about a year to implement Internet Explorer, while Netscape released every three months a new but maybe incomplete Product. So they were more or less the first company to work in an agile way. But when Microsoft came up with IE, Netscape had to bring a really novelty to the browser to keep also their partnership with sun microsystem, who wanted  to position Java as the Internettechnology. 
@@ -42,6 +40,10 @@ And it is so easy to lern, that even without much programming experience you can
 ```
 
 ??HORIZONTAL
+## For what do I need variable?
+I want to memoize some data
+
+??HORIZONTAL
 ## Numbers
 ``` javascript
     const a = 1;
@@ -49,6 +51,25 @@ And it is so easy to lern, that even without much programming experience you can
     const c = Infinity;
     const d = -Infinity;
 ```
+
+??HORIZONTAL
+## For what do I need Infinity?
+
+When I generically have to find the minimum in a list:
+
+``` javascript
+    var myList = [1]
+    // instead of cumbersomly check for the length
+    if (myList.length == 1) {
+        return myList[0]
+    } else {
+        return min(myList[0], myList[1])
+    }
+    // I can simply
+    myList.concat([Infinity])
+    return min(myList[0], myList[1])
+```
+
 
 ??HORIZONTAL
 ## Falsy values
@@ -62,6 +83,10 @@ And it is so easy to lern, that even without much programming experience you can
 ```
 
 ??HORIZONTAL
+## For what do I need null?
+To clearify that you really did not want to store some data here.
+
+??HORIZONTAL
 ## Strings
 ``` javascript
     const double_quoted = "Here I can use ' to mark strings"
@@ -69,6 +94,9 @@ And it is so easy to lern, that even without much programming experience you can
     const escaped = 'Although I can \'Escape\' as well'
     const also_escaped = "Same is \"true\" for doublequoted"
 ```
+??HORIZONTAL
+## For what do I need two types of quotes?
+To use single quotes inside of HTML attributes which are already surrounded by double quotes.
 
 ??HORIZONTAL
 ## Template Strings
@@ -77,6 +105,10 @@ And it is so easy to lern, that even without much programming experience you can
     const greeting = `Hello ${name},
         today we learn JavaScript.`
 ```
+
+??HORIZONTAL
+## For what do I need Template strings
+To not have to cumbersomly concatenate lots of strings...
 
 ??HORIZONTAL
 ## Arrays
@@ -89,6 +121,10 @@ And it is so easy to lern, that even without much programming experience you can
 ```
 
 ??HORIZONTAL
+## For what do I need push and pop?
+To easily implement a stack.
+
+??HORIZONTAL
 ## Arrays
 ``` javascript
     const myList = [1,2,3,4,5,6,7,8,9]
@@ -98,6 +134,11 @@ And it is so easy to lern, that even without much programming experience you can
     const aString = mylist.join(' ')    // "1 2 3 4 5 6 7 8 9"
 
 ```
+
+??HORIZONTAL
+## For what do I need slice or concat?
+To not have to call push and pop infinit times
+
 ??HORIZONTAL
 ## Functions
 ``` javascript
@@ -118,6 +159,10 @@ And it is so easy to lern, that even without much programming experience you can
 ```
 
 ??HORIZONTAL
+## For what do I need functions?
+To abstract parts of your algorithm away so that you do not have to think about them anymore!
+
+??HORIZONTAL
 ## Function Parameters
 ``` javascript
     const add = (a, b) => a + b
@@ -127,6 +172,8 @@ And it is so easy to lern, that even without much programming experience you can
     add(1,2,3,4,5,6,7)  // 3 because the other parameters 
                         // are just ignored
 ```
+## For what do I need that ...args thing
+To access an infinit number of parameter without converting them from arguments to an array.
 
 ??HORIZONTAL
 ## Objects
@@ -141,6 +188,10 @@ And it is so easy to lern, that even without much programming experience you can
 
     const result = literal.method()
 ```
+??HORIZONTAL
+## For what do I need Objects
+To store data together that belong together in a named way.
+To prvent switch - case - statements
 
 ??HORIZONTAL
 ## JSON
@@ -163,6 +214,11 @@ And it is so easy to lern, that even without much programming experience you can
     const name = user.name
     const addressString = JSON.stringify(user.address)
 ```
+
+??HORIZONTAL
+## For what do I need JSON?
+To retreive data from the server in a way that JavaScript can handle by default (same as objects)
+
 
 ??HORIZONTAL
 ## Classes
@@ -197,6 +253,10 @@ myInstance._a       // But accessing _a directly is also possible!
 ```
 
 ??HORIZONTAL
+## For what do I need classes?
+For team mates that only know OOP and don't know better... :D
+
+??HORIZONTAL
 ## if-else
 ``` javascript
     const k = 3
@@ -208,8 +268,12 @@ myInstance._a       // But accessing _a directly is also possible!
     }
     
     // DO NOT CASCATE THIS
-    const result2 = (k % 3 === 0) ? 'valid' : 'invalid'      
+    const result2 = (k % 3 === 0) ? 'valid' : 'invalid'
 ```
+
+??HORIZONTAL
+## For what do I need if-else?
+When you so no otherway to separate usecases
 
 ??HORIZONTAL
 ## switch-case
@@ -218,6 +282,15 @@ myInstance._a       // But accessing _a directly is also possible!
     let price
     switch (fruit) {               // can you see the problem here?
         case 'orange':
+``` javascript
+const a = 1
+if (a == '1') {
+    // you would not expect that this evaluates here
+    // but due to type type casting it will
+}
+
+if (a === '1') {
+    // tripple equal
             price = 0.59
             break;
         case 'banana':
@@ -231,6 +304,10 @@ myInstance._a       // But accessing _a directly is also possible!
     }
 ```
 
+??HORIONTAL
+## For what do I need switch-case?
+You don't...
+
 ??HORIZONTAL
 ## preferred switch-case
 ``` javascript
@@ -242,7 +319,7 @@ myInstance._a       // But accessing _a directly is also possible!
     }
     const price = pricePerFruit[fruit]
     if (!price) {
-        throw new Error ('unknown fruit type') 
+        throw new Error ('unknown fruit type')
     }
 ```
 
@@ -258,15 +335,24 @@ for (let i=0; i<myList.length; i++) {
 ```
 
 ??HORIZONTAL
+## For what do I need for-loops?
+For usecases, where the acces to a list
+needs to be calculated somehow (rarly...)
+
+??HORIZONTAL
 ## while-loop
 ``` javascript
-const myList = [1, 2, 3, 4, 5]
-let i = myList.length
-while (i > 0) {
-    const entry = myList[--i]
-    // do sometihng with entry
+var game_running = true
+function stopGame () {
+    game_running = false
+}
+while (game_running) {
+    // loop until user event
 }
 ```
+??HORIZONTAL
+## For what do I need while-loops?
+For use-Cases where I don't have numerical end conditions
 
 ??HORIZONTAL
 ## do-while-loop
@@ -280,6 +366,10 @@ do {
 ```
 
 ??HORIZONTAL
+## For what do I need a do-while-loop
+When I want to be sure, that the loopcontent gets executed at least one time
+
+??HORIZONTAL
 ## for-in-loop
 ``` javascript
 const myObj = {a: 1, b: 2, c:3}
@@ -289,6 +379,10 @@ for (var key in myObj) {
 }
 
 ```
+
+??HORIZONTAL
+## For what do I need a for-in-loop
+When I want to iterate over Object attributes
 
 ??HORIZONTAL
 ## forEach
@@ -302,6 +396,11 @@ myList.forEach((entry, index, array) => {
     // do something                         
 })
 ```
+
+??HORIOZNTAL
+## For what do I need a forEach loop?
+* When you want to prevent classic for-loops
+* When you want to use a function already in use where else to handle on 
 ??HORIZONTAL
 ## map
 ``` javascript
@@ -318,6 +417,10 @@ myList.map((entry, index, array) => {
 ```
 
 ??HORIZONTAL
+## For what do I need .map?
+To create a new modified version of an array
+
+??HORIZONTAL
 ## filter
 ``` javascript
 const myList = [1, 2, 3, 4, 5]
@@ -331,6 +434,12 @@ myList.filter((entry, index, array) => {
     return entry % 2 === 0 // boolean
 })
 ```
+
+??HORIZONTAL
+## For what do I need .filter?
+If I want to create a version of an array without some
+unwanted entries
+
 ??HORIZONTAL
 ## reduce
 ``` javascript
@@ -347,6 +456,11 @@ myList.reduce((accumulated, entry, index, array) => {
     return accumlated + entry
 }, neutralValue)
 ```
+??HORIZONTAL
+## For what do I need reduce?
+With reduce you can transform a list into anything.
+But don't - use forEach or map instead. reduce is too 
+complicated
 
 
 ??HORIZONTAL
@@ -369,6 +483,10 @@ const newObj2 = {a, b, c}           // {a: 1, b: 2, c: 3} uses the
 ```
 
 ??HORIZONTAL
+## For what do I need the spread-operator
+You can clone objects, which is very important to not scramble up state by side effects.
+
+??HORIZONTAL
 ## Named Parameters by decomposition
 ``` javascript
 const a = 1
@@ -389,6 +507,19 @@ fnWithNamedParams({b, c, a}) // here the order does not matter,
 ```
 
 ??HORIZONTAL
+## For what do I need named parameters?
+Without named parameters, there is the risk that you mix
+up the order of function parameters:
+
+``` javascript
+const appendSumToString(str, num1, num2) {
+    return str + (num1 + num2);
+}
+appendSumToString("kg ", 5, 3) // kg 8
+appendSumToString(5,3, " kg") // 53 kg 
+```
+
+??HORIZONTAL
 ## == is not the same as ===
 ``` javascript
 const a = 1
@@ -403,6 +534,8 @@ if (a === '1') {
     // this would not be evaluated
 }
 ```
+
+
 
 ??NOTE
 Flaws in a Programming language are things that make the reading of a programming language unintitive.

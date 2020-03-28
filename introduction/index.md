@@ -2,7 +2,7 @@ Christian H&ouml;rauf<br>
 <img src="images/twitter.png" width="5%"><sup>@fonzygruen</sup><br>
 
 ??Note
-Welcome to the Seminar of Web-Engineering. My name is Christian Hörauf, and I have been working the IT-Industry for 16 years now. 7 of them I spend in the Web-Business as Frontend Developer. Currently I work for Consorsbank in Nürnberg.
+Welcome to the Seminar of Web Mobile 2. My name is Christian Hörauf, and I have been working the IT-Industry for 16 years now. 7 of them I spend in the Web-Business as Frontend Developer. Currently I work for Consorsbank in Nürnberg. I spend lots of time with AngularJS but also with Angular and other JavaScript technologies.
 
 ??HORIZONTAL
 ## Goals of the seminar
@@ -25,36 +25,21 @@ Jeder von Ihnen hat vermutlich heute ein Smartphone in der Tasche.  -->
 
 ??HORIZONTAL
 ## How you will be graded
-<img src="introduction/images/Bewertung_1.jpg">
+* You will build 6 groups <!-- .element: class="fragment" -->
+* You will select a dataset to visualize <!-- .element: class="fragment" -->
+* You will create a react app, which should allow some manipulation of the dataset <!-- .element: class="fragment" -->
+* Graded will be: <!-- .element: class="fragment" -->
+    * How well did you test your application by automated tests? <!-- .element: class="fragment" -->
+    * How readable is the code you created? <!-- .element: class="fragment" -->
 
-??NOTE
-I know, I know, you are very interested in the topic itself. But somehow you need a grade for this course. So the good message is, there won't be Test for this course. But I have several bad news for you. You will do a presentation about a web framework, which will take 20% of the end result. In addition we will create a Software project together. This will be some kind of simple Frontend only game or if you come up with an interesting idea, I would like to support you in realizing it. But the Project itself and how you present it will only be rated with 40% of the complete grade. The missing 40% I will spend on the way you will implement the project. So what quality measures do you take, how fast can you deploy a new version and similar aspects, that we will discuss on the second seminar day.
-
-??HORIZONTAL
-## Good Luck
-<img src="introduction/images/Bewertung_2.jpg">
-
-??HORIZONTAL
-## Other organizational stuff
-* Thu 10.10.2019 10:00-17:30
-* Thu 07.11.2019 10:00-17:30
-* Sat 09.11.2019 10:00-17:30
-* Thu 12.12.2019 10:00-17:30
-* Sat 14.12.2019 10:00-17:30
-* xxx xx.01.2020 10:00-17:30 <!-- .element: class="fragment" -->
-* xxx xx.01.2020 10:00-17:30 <!-- .element: class="fragment" -->
-
-??NOTE
-Besides the 5 Course-Days we will have this year, we will have another one in January. Since we do not yet exactly know, when your Tests will we be, we will have to figure out the last dates, when you know your Test appointments. (around november)
-In addition, you will work on the software projects in groups of 4-5 students. I will act as Product Owner (I will explain later what that is) of your projects, so that I can take into account that your time is limited. To do so, each group will have a video chat with me for about 30 minutes every two weeks. 
 
 ??HORIZONTAL
 ## Iterative Sprint Reviews
 * Every two weeks
-* beginning Tue 22.10.2019 / Wed 23.10.2019 
-* until Tue 17.12.2019 / Wed 18.12.2019
-* 21:00-21:30 or 21:30-22:00
-* That means 5 times 30 minute video chat
+* beginning Mon 20.04.20 / Tue 21.04.20 / Wed 22.04.20
+* until Mon 15.06.20 / Tue 16.06.20 / Wed 17.06.20
+* 21:00-22:00 or 22:00-23:00
+
 
 ??NOTE
 * Please let me know if a group needs a shift in those dates
@@ -76,103 +61,8 @@ Asuming, the room mirrors the area of germany, please position yourself where yo
 Lineup in a row sorted by your experience in computer science. How many lines of code have you written roughly?
 
 ??NOTE
-We know there will be about 21 participants. Split the line after 8
+We know there will be about 30 participants. Split the line after 18
 people, so that 2 good programmers come up 3 medicore programmers.
 
-abcdefgh ijklmnopqrstu -> ghijkl femno dcpqr abstu 
-
-??HORIZONTAL
-## Break for 10 Minutes
-Select a group name
-
-??HORIZONTAL
-## Presentations
-* All presentations have to be prepared until 9.11.2019 <!-- .element: class="fragment" -->
-* Shall take about 20 min presentation and 10 min questions <!-- .element: class="fragment" -->
-* As preperation work through the "Getting Started" Tutorials <!-- .element: class="fragment" -->
-* Present the core features of the specific famework <!-- .element: class="fragment" -->
-* Give a simple example from Getting Started <!-- .element: class="fragment" -->
-* Give your groups gut feeling. Did you like the Framework? Do you want to use it for your project? <!-- .element: class="fragment" -->
-
-??HORIZONTAL
-## Presentations
-<a href="https://www.webcomponents.org/introduction"><img src="introduction/images/webcomponents.jpg"></a>
-
-??NOTE
-You do not need to use the framework, you present here, as framework in your software project. Just get an impression and inspiration what fits your needs. So which group takes which framework to present?
-
-
-??HORIZONTAL
-## Presentations
-<a href="https://angular.io/tutorial"><img src="introduction/images/angular.svg" width="25%"></a>
-
-??NOTE
-You do not need to use the framework, you present here, as framework in your software project. Just get an impression and inspiration what fits your needs. So which group takes which framework to present?
-
-??HORIZONTAL
-## Presentations
-<a href="https://www.valentinog.com/blog/redux/"><img src="introduction/images/react-redux.png"></a>
-
-??NOTE
-You do not need to use the framework, you present here, as framework in your software project. Just get an impression and inspiration what fits your needs. So which group takes which framework to present?
-
-??HORIZONTAL
-## Presentations
-<a href="https://guide.elm-lang.org/"><img src="introduction/images/elm.png"></a>
-
-??NOTE
-You do not need to use the framework, you present here, as framework in your software project. Just get an impression and inspiration what fits your needs. So which group takes which framework to present?
-
-??HORIZONTAL
-## About the Software Project
-1. Feel free to bring in your own ideas <!-- .element: class="fragment" -->
-1. Feel free to in include a backend solution <!-- .element: class="fragment" -->
-1. Everybody codes! <!-- .element: class="fragment" -->
-1. I can always get the latest working iteration of your software <!-- .element: class="fragment" -->
-1. I get access to your version control system <!-- .element: class="fragment" -->
-1. I get access to your ticket system <!-- .element: class="fragment" -->
-1. I get access to your wiki <!-- .element: class="fragment" -->
-1. I get your final tag <!-- .element: class="fragment" -->
-
-??NOTE
-Before I present you my ideas for Software Projects you can implement, let me say
-1. All of these ideas are only ideas. If you have your own idea what your group wants to implement, then I will be happy to support you in it, as long it has a certain complexity. So I will not allow a pure commandline tool without gui.
-2. All of these ideas have in common, that they do not need a backend server, to keep the complexity of system accesability away from you. But if you are able to include a backend server you can do so.
-3. All of these ideas are not too complicated to realize. Maybe the most talented in your groups might hack one of those ideas in about 1-2 days. But I do not want you to quickly hack a result. I want you to get an idea how the process of implementing software in the industry looks like. Therefore I want all of your Teammates to code for the project and the skille programmers should also take care to set up a valid continious integration environmentor even continious deployment environment.
-4. This means, me, your customer will always be able to see the latest usable iteration of your product.
-5. I need access to your version controll system.
-6. This means also, me, your lecturer, will have access to your ticket system.
-7. And finally I get access to your wiki, where you will document your process and potential ugly parts that might arise.
-8. When you think your done, you will tag the wiki and the repository with "Abschluß" and give me in adition the sha hashes of them. By that I will be able to have a final state of your work and will mark exactly that.
-
-??HORIZONTAL
-## Proposal I
-### Mensch ärgere Dich nicht
-<img src="introduction/images/mensch_aergere_dich_nicht.jpg">
-
-??NOTE
-Let's make a clone of the well known board game. There should also be a computer player to play against.
-
-??HORIZONTAL
-## Proposal II
-### Crossword Puzzle
-<img src="introduction/images/kreuzwort_raetsel.png" width="50%">
-??NOTE
-Let the user enter a word, look it up on wikipedia and randomly select words from that article and combine them to a crossword puzzle. The user will get a list of the used words and can by drag and drop complete the puzzle.
-
-??HORIZONTAL
-## PROPOSAL III
-### DataDetector (with Electron)
-<img src="introduction/images/data_detector.jpg" width="50%">
-
-??NOTE
-A tool that scans a specific directory on your harddrive and displays which subdirectory needs how much disk space.
-To be able to access the hardware we use Electron.
-
-??HORIZONTAL
-## PROPOSAL IV
-### Stock Checker (Browser Plugin)
-<img src="introduction/images/stock_checker.jpg" width="50%">
-
-??NOTE
-A Browser Plugin, that is able to check when one of the users selected stock values exceeds or falls below a certain price. By the way, although I will show you how to use our api, I will gain nothing from it, since it is very unrealistic that my company will provide such a tool to the users.
+abcdefghijklmnopqr     stuvwxyzABCD ->
+abcCD defAB ghiyz jklwx mnouv pqrst
