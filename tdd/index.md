@@ -1,9 +1,6 @@
 # Test Driven Development
 
 ??HORIZONTAL
-## [WAT](https://archive.org/details/wat_destroyallsoftware)
-
-??HORIZONTAL
 <img src="tdd/images/tdd-0.jpg" width="50%">
 ??NOTE Back then we wondered how we could come to this solid foundation of unit tests. Is there some guidance that leads you to this solid foundation of unit tests? What is the easiest way to reach it? 
 

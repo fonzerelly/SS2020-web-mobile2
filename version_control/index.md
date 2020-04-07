@@ -9,13 +9,13 @@ Did  you ever played Video Games? In more detail, did you ever played a RPG (Rol
 <img src="version_control/images/save_game_2.jpg" width="75%">
 
 ??NOTE
-Of course you safe the game state short before, so that you do not have to redo the complete level. If you loose, you just reload that game state. And if you play a very hard EgoShooter, where each bullet count, you might safe much more often. 
+Of course you safe the game state short before, so that you do not have to redo the complete level. If you loose, you just reload that game state. And if you play a very hard EgoShooter, where each bullet count, you might safe much more often.
 
 ??HORIZONTAL
 <img src="version_control/images/git.png">
 ??NOTE
 This is where a VersionControllSystem like git comes in. When you programm, you might encounter very hard end opponents, like this very complex algorithm, that you are evan afraid of touching it. So you want to preserve the state of your code, to be able to come back to an earlier state when you seem to have corrupted your code.
-Git keeps Track of your code for you. It stores only the differences from version to version, so that it does not take a lot of harddisk, but you can return when ever you want. 
+Git keeps Track of your code for you. It stores only the differences from version to version, so that it does not take a lot of harddisk, but you can return when ever you want.
 
 ??HORIZONTAL
 ```
@@ -51,7 +51,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 ```
 ??NOTE
-Before you store something into git you have to select it. So always have a look at which potential changes git recognizes. For example where does this main.bak file comes from? Maybe it is a safety storage of my editor or IDE. I do not want to have such a file in my repo, it would distract me and my team mates of what is relevant for the project. 
+Before you store something into git you have to select it. So always have a look at which potential changes git recognizes. For example where does this main.bak file comes from? Maybe it is a safety storage of my editor or IDE. I do not want to have such a file in my repo, it would distract me and my team mates of what is relevant for the project.
 
 ??HORIZONTAL
 ### .gitignore
@@ -178,7 +178,6 @@ When you think, that you are done, then you should create a pull request. A pull
 
 ??HORIZONTAL
 ## Tipps for a code review
-* check your DoD  <!-- .element: class="fragment" -->
 * checkout that branch locally and evaluate the tests  <!-- .element: class="fragment" -->
 * check if you easily understand the code changes  <!-- .element: class="fragment" -->
 * if not, find together with the requester a refactoring  <!-- .element: class="fragment" -->
@@ -239,7 +238,7 @@ In any case, make sure that the arrows are deleted afterwards, which for most pr
 ```
 $ git add .
 $ git commit //will open text editor with prepared text for merge
-$ git push origin <Ticket-ID>-<User-Story-Title-Without-Spaces>
+$ git push origin <Ticket-ID>-<Story-Title-Without-Spaces>
 ```
 ??NOTE
 When you now commit your changes and push them to the central repository, the merge conflict in the github gui will be vanished and you can merge the changes into the master branch.
