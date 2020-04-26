@@ -148,6 +148,40 @@ If you want to build upon an existing class and extend its functionality, you wi
 You can call the parents constructor by the super-keyword and pass the relevant parameters to it. Same goes if you want to overwrite parents methods and need to run their code first.
 
 
+??HORIZONTAL
+
+## Delegation over Inheritance
+
+
+``` JavaScript 
+class CompanyCar {
+    ...
+    getOdometerCount() { ... }
+    enterLogbookEntry(journeyReason, kilometersTraveled) {
+        this.logbook.store(Date.now(), journeyReason, kilometersTraveled);
+    }
+}
+
+class Employee extends Person {
+    constructor(firstName, secondName, salary, companyCar) {
+        ...
+        this.companyCar = companyCar;
+    }
+
+    registerJourney (journeyReason, kilometersTraveled) {
+        this.companyCar.enterLogbookEntry(journeyReasen, kilometersTraveled)
+    }
+
+}
+```
+
+
+??NOTES
+
+As already mentioned, it can be become a big problem, if you only try to share code by derivation. In fact I see it now as an anti pattern, that only in a few cases make sense. Most of the time I prefer delegation, which means: Most of the time you are better of by putting functionality into another class and using it from there.
+Here for example, we created a new class CompanyCar, that might be connected to a database for example that not only stores the logbook data of a CompanyCar, but also the OdometerCount. Based on that the company can differentiate between how much the car was used in personal use.
+
+To decide between inharitance and delegation, you should think about the problem you are about to model. Does the new functionality you want to build really fit to the nature of the class you want to add it? For example, we could have implemented the enterLogbookEntry-Method also on the Employee-class. But is this feature really something that belongs to the typical aspects of an employee? For example, the employee is usually not directly connected to the database-table of CompmanyCars, since not every employee has a companyCar. So that the decision for delegation here seems to be appropriate. But the judgment about this questions may be different according to the problem setup.
 
 ??HORIZONTAL
 ## Summery on Classes
@@ -156,7 +190,19 @@ You can call the parents constructor by the super-keyword and pass the relevant 
 * Classes are a way to organize your code
 * Classes represesent state
 
-If you want to use Classes, you should read [Design Patterns from Gamma at al.](https://www.amazon.de/Design-Patterns-Object-Oriented-Addison-Wesley-Professional-ebook/dp/B000SEIBB8/ref=sr_1_1?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=design+patterns&qid=1587445230&sr=8-1)
+??NOTES
+
+In the case of the CompanyCar, I even think that the delegation to a CompanyCar might only be a stopgap solution. Probably we should have implemented a Decorator-Class that connects the Employee with the CompanyCar. And the functionality to provided to the User would have been implemented there. 
+More on recipes like the Decorator, you can find in [Design Patterns from Gamma at al.](https://www.amazon.de/Design-Patterns-Object-Oriented-Addison-Wesley-Professional-ebook/dp/B000SEIBB8/ref=sr_1_1?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=design+patterns&qid=1587445230&sr=8-1). If you want to do ObjectOriented Programming, you need to read this. It will give you some ideas about how to handle specific problems and even  more important, it gives you a vocabulary to discuss with other Software-Engineers about aspecific solution.
+
+??HORIZONTAL
+
+## The DRY-Principle
+
+??NOTES
+
+So why is the discussion about deligation or inheritance so important? Well some algorithms can be very complex. And the efford to reinvent that algorithm again, to use it somewhere else seem to be quite easy by just copying it. BUT this is a very bad solution, especially when you copy the same code more than two times. What will happen, if you find an error in that complex algorithm? You would have to repair the same bug at all places, where you copied it and it is very likly that you forget once occurance of that code. In addition, somebody else might have changed one occurance of that algorythm but not the others to achieve something slightly different. But the Bug you need to fix occurs in that modified version of the algorithm as well, and it might be impossible to find that occurance as well.
+To prevent this, ensure that you follow the DRY-Principle: "Don't repeat yourself". Although it might seem to be easier to copy and paste the code, there are better ways like deligation or derivation. But soon we will see even better ways to reuse code. But as a rule of thump: If you find you need the same code more than two times, then you should spend the efford to move that code to a new class or method.
 
 ??HORIZONTAL
 
@@ -209,7 +255,7 @@ But this does not necessary need to be in JavaScript. When you return an Object 
 ## Pure Functions
 
 
-``` JavaScript 
+``` JavaScript
 // pure function
 function add (a, b) {
     return a + b;
@@ -231,18 +277,129 @@ Math.random() // 0.9756
 ## Higher Order Functions
 
 
-``` JavaScript 
-function createFn() {
-
+``` JavaScript
+function process(fn, p1, p2) {
+    return fn(p1, p2)
 }
+
+function add (a, b) {
+    return a + b;
+}
+
+const result = process(add, 2, 3)          // 5
 ```
 
 ??NOTES
-* pure functions
-* higher order functions
-* currying
-* functional composition // far beter as
-* when to use classes in JavaScript, when to use closures
-    -- When framework x is forcing you to use classes
-    -- When you need to instanciate a lot from it like 1000 dots a coordinate system
-    -- Otherwise use closures :D
+Higher Order Functions are Functions that can take functions as input parameters
+and or return functions as result parameters.
+
+In this example we use the HigherOrder Function process(), which takes a function and two parameters. It returns the result of the two parameters applied to the passed in Function. In this example we pass the function add and
+the parmeters 2 and 3. Of course this results in 5.
+
+Maybe HigherOrder Functions already reminded you of Polymorphism, since process could do different things depending on what you pass in, just like the already mentioned CoffeMachine.
+
+??HORIZONTAL
+## Currying I
+
+``` JavaScript
+function simplifiedCurring (fn) {
+    return function (a) {
+        return function (b) {
+            return fn(a, b)
+        }
+    }
+}
+
+function add (a, b) {
+    return a + b
+}
+
+const curriedAdd = simplifiedCurring(add)
+
+curriedAdd(1)(2)                            // 3
+curriedAdd(1, 2)                            // Function expecting another parameter
+
+const increment = curriedAdd(1)
+
+increment(4)                                // 5
+```
+
+??NOTES
+Now when you push that idea a little further, you might come up with what we call currying. The Basic idea is this: What if you could store some parameters of a function with it, so that some parameters stay open and others don't?
+
+In this example we have a function simplifiedCurring, that takes a function and
+returns a function. But even weirder the returned function does the same, just as its output. So when you call simplifiedCurring with add, you will get a function that only takes one argument. This leads to this weird seeming syntax
+with braces after braces. But in fact what happens is, that we create a new function here that stored the value 1 for a of the add function. And b is still not defined. So by calling the result of that function with a value, we specify be.
+
+Now what is add with a fixed parameter of a to 1? It is an increment function.
+Every value you pass it in, it increments by one and returns that value.
+
+??HORIZONTAL
+
+## Curring II
+
+``` JavaScript
+const R = require('ramda')
+
+function add (a, b) {
+    return a + b
+}
+
+const curriedAdd = R.curry(add)
+curriedAdd(1)(2)    // 3
+curriedAdd(1, 2)    // 3
+
+cosnt increment = curriedAdd(1)
+```
+
+??NOTES
+Now instead of using simplifiedCurry you can use a curry-function from a library like Ramda or lodash. Instead of our simplifiedCurry-Function that only could handle two parameters, the more advanced version from a librlary can handle an unlimited amout of parameters.
+By that, you can make from every what so ever complex function simplified versions specific to one use case.
+Can you already see how we could easily reuse or simplify function by curring alone?
+
+??HORIZONTAL
+
+## Functional composition
+
+``` JavaScript
+const add = R.curry((a, b) => a + b)
+const isEvan = (x) => x % 2 === 0
+const isOdd = R.not(isEvan)
+
+function isNextOddClassic (num) {
+    const nextValue = add(1, num)
+    return isOdd(nextValue)
+}
+
+const isNextOdd = R.pipe(add(1), isOdd)
+
+isNexOdd(4)                          // true
+isSumOdd(5)                          // false
+```
+
+??NOTES
+
+Functional Composition now brings all together and gives you a far more advanced way to reuse code. You can pass a compose-function several functions and it will it call each by the result of the other.
+
+Let's have a look at a simple example: We want to write a function that can tell us if the next number of a value is odd nor not. So we base our work on an add-function and an isOdd-Function, that by the help of the helper R.not was gained from isEvan.
+
+The classic way to solve it, would be writing a new function isNextOddClassic and inside of it
+calling isOdd() with the result of add stored in nextValue. Things like that you see often in OOP-styled languages, where you create a class, store it in a temporary variable and pass that variable to another class, which will be used by another class. In Functional Programming, when you use composition, the handlich of such a thing is far easier to implement and read:
+
+You call R.pipe with the functions you want to be evaluated by it from left to right. Please note, that add is curried and by that, add(1) will return a function taking only one parameter to be incremented by 1.
+
+
+??HORIZONTAL
+
+## Closures over Classes in JavaScript
+
+* When a framework (like Angular) forces you to use classes  <!-- .element: class="fragment" -->
+* When you need to instantiate a lot of instances of it. (like 1000 dots in a coordinate system)  <!-- .element: class="fragment" -->
+* Wheny your team knows only OOP (which is unfortunately the most common reason) <!-- .element: class="fragment" -->
+
+??NOTES
+
+So from my point of view Closures are superior to Classes in most cases. There are a few usecases where you should prefer classes.
+For example when you use a framework that forces you to use classes. Angular is for example extremly connected to classes, since they use Annotations and use Types for Dependency Injection.
+Or when you need to instantiate a lot of instances from it. For example when you need to model lots dots in a coordinate system. As it turns out closures are slightly slower than classes, but only has an effect on a big number of instances.
+And the most important reason why you have to use Classes (which is unfortunately the most common usecase) when you team only knows OOP.
