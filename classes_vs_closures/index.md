@@ -153,7 +153,7 @@ You can call the parents constructor by the super-keyword and pass the relevant 
 ## Delegation over Inheritance
 
 
-``` JavaScript 
+``` JavaScript
 class CompanyCar {
     ...
     getOdometerCount() { ... }
@@ -188,7 +188,7 @@ To decide between inharitance and delegation, you should think about the problem
 
 * Classes associate Data with Functionality
 * Classes are a way to organize your code
-* Classes represesent state
+* Classes represent state
 
 ??NOTES
 
@@ -199,9 +199,11 @@ More on recipes like the Decorator, you can find in [Design Patterns from Gamma 
 
 ## The DRY-Principle
 
+<img src="classes_vs_closures/images/DontRepeatYourself.png">
+
 ??NOTES
 
-So why is the discussion about deligation or inheritance so important? Well some algorithms can be very complex. And the efford to reinvent that algorithm again, to use it somewhere else seem to be quite easy by just copying it. BUT this is a very bad solution, especially when you copy the same code more than two times. What will happen, if you find an error in that complex algorithm? You would have to repair the same bug at all places, where you copied it and it is very likly that you forget once occurance of that code. In addition, somebody else might have changed one occurance of that algorythm but not the others to achieve something slightly different. But the Bug you need to fix occurs in that modified version of the algorithm as well, and it might be impossible to find that occurance as well.
+So why is the discussion about deligation or inheritance so important? Well some algorithms can be very complex. And the efford to reinvent that algorithm again, to use it somewhere else seem to be quite easy by just copying it. BUT this is a very bad solution, especially when you copy the same code more than two times. What will happen, if you find an error in that complex algorithm? You would have to repair the same bug at all places, where you copied it and it is very likly that you forget once occurance of that code. In addition, somebody else might have changed one occurance of that algorithm but not the others to achieve something slightly different. But the Bug you need to fix occurs in that modified version of the algorithm as well, and it might be impossible to find that occurance.
 To prevent this, ensure that you follow the DRY-Principle: "Don't repeat yourself". Although it might seem to be easier to copy and paste the code, there are better ways like deligation or derivation. But soon we will see even better ways to reuse code. But as a rule of thump: If you find you need the same code more than two times, then you should spend the efford to move that code to a new class or method.
 
 ??HORIZONTAL
@@ -249,13 +251,13 @@ But this does not necessary need to be in JavaScript. When you return an Object 
 
 * is possible when functions are first-class-citizens  <!-- .element: class="fragment" -->
 * tries to prevent state as far as possible to prevent so calles side-effects  <!-- .element: class="fragment" -->
-* does not need design patterns. Most of what design patterns give you for classes is a peace of cake with Functional Programming
+* does not need design patterns. Most of what design patterns give you for classes is a peace of cake with Functional Programming <!-- .element: class="fragment" -->
 
 ??HORIZONTAL
+
 ## Pure Functions
 
-
-``` JavaScript
+``` JavaScriptAbstraction
 // pure function
 function add (a, b) {
     return a + b;
