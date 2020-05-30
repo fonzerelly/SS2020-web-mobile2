@@ -29,23 +29,33 @@
             </section>
             <section>
                 <h2>Overview</h2>
-                <ul>
-                    <li><a href="/SS2020-web-mobile2/#/introduction">Introduction</a></li>
-                    <li><a href="/SS2020-web-mobile2/#/history">History</a></li>
-                    <li><a href="/SS2020-web-mobile2/#/javascript_basics">JavaScript Basics</a></li>
-                    <li><a href="/SS2020-web-mobile2/#/development_workflow">Development Workflow</a></li>
-                    <li><a href="/SS2020-web-mobile2/#/version_control">Version Control</a></li>
-                    <li><a href="/SS2020-web-mobile2/#/tdd">Test Driven Development</a></li>
-                    <li><a href="/SS2020-web-mobile2/#/classes_vs_closures">Classes vs Closures</a></li>
-                    <li><a href="/SS2020-web-mobile2/#/asynchronious_programming">Asynchronious Programming</a></li>
-
-                    <!-- <li><a href="/SS2020-web-mobile2/#/calculator_exercise">Exercise: Calculator</a></li> -->
-                    <!-- <li><a href="/SS2020-web-mobile2/#/asynchronious_programming">Asynchronious Programming</a></li> -->
-                    <!-- <li><a href="/SS2020-web-mobile2/#/code_coverage">Code Coverage</a></li> -->
-                    <!-- <li><a href="/SS2020-web-mobile2/#/bundling">Bundling</a></li> -->
-
-
-                </ul>
+                <table>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li><a href="/SS2020-web-mobile2/#/introduction">Introduction</a></li>
+                                <li><a href="/SS2020-web-mobile2/#/history">History</a></li>
+                                <li><a href="/SS2020-web-mobile2/#/javascript_basics">JavaScript Basics</a></li>
+                                <li><a href="/SS2020-web-mobile2/#/development_workflow">Development Workflow</a></li>
+                                <li><a href="/SS2020-web-mobile2/#/version_control">Version Control</a></li>
+                                <li><a href="/SS2020-web-mobile2/#/tdd">Test Driven Development</a></li>
+                                <li><a href="/SS2020-web-mobile2/#/classes_vs_closures">Classes vs Closures</a></li>
+                                <li><a href="/SS2020-web-mobile2/#/asynchronious_programming">Asynchronious Programming</a></li>
+            
+                                <!-- <li><a href="/SS2020-web-mobile2/#/calculator_exercise">Exercise: Calculator</a></li> -->
+                                <!-- <li><a href="/SS2020-web-mobile2/#/asynchronious_programming">Asynchronious Programming</a></li> -->
+                                <!-- <li><a href="/SS2020-web-mobile2/#/code_coverage">Code Coverage</a></li> -->
+                                <!-- <li><a href="/SS2020-web-mobile2/#/bundling">Bundling</a></li> -->
+                            </ul>
+                        </td>
+                        <td style="vertical-align: top;">
+                            <ul>
+                                <li><a href="/SS2020-web-mobile2/#/frameworks_overview">Frameworks - an Overview</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+                
             </section>
             <section 
                 data-markdown="introduction/index.md" 
@@ -152,6 +162,14 @@
                 data-charset="UTF-8"
                 id="asynchronious_programming">
             </section>
+            <section
+                data-markdown="frameworks_overview/index.md" 
+                data-separator=""
+                data-separator-vertical="^\?\?HORIZONTAL" 
+                data-separator-notes="^\?\?NOTE" 
+                data-charset="UTF-8"
+                id="frameworks_overview">
+            </section>
             <section>
                 <h1>To be continued ...</h1>
                 <br><br>
@@ -182,6 +200,14 @@
         link.href = window.location.search.match(/print-pdf/gi) ? 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/print/pdf.css' : 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/print/paper.css';
         document.getElementsByTagName('head')[0].appendChild(link);
     </script>
+    <script>
+        /***
+        * To implement Data-2-binding in frameworks_overview/index.md
+        ***/
+        function update() {
+          document.getElementById('out').innerHTML = document.getElementById('in').value
+        }
+        </script>
 </body>
 
 </html>
