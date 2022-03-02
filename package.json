@@ -11,7 +11,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "reveal.js": "^3.6.0"
+    "reveal.js": "^4.3.0"
   },
   "devDependencies": {
     "http-server": "^0.11.1"
